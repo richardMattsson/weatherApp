@@ -1,6 +1,18 @@
 body {
   background-color: #333;
+  color: #fffff7;
 }
-#myChart {
+div {
+  display: flex;
+  flex-direction: column;
+}
+/* div {
   width: 90vw;
+} */
+
+@media screen and (min-width: 480px) {
+  div {
+    max-width: 800px;
+    height: 400px;
+  }
 }
