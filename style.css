@@ -51,7 +51,8 @@ h1 {
   border: 1px solid #555;
 }
 
-#forecast {
+#forecast,
+#weatherVariable {
   margin: 0 auto;
   width: 95%;
   max-width: 800px;
@@ -101,8 +102,12 @@ div {
 }
 #chartContainer {
   max-width: 800px;
-  height: 400px;
+  height: 600px;
   margin-top: 20px;
+}
+#myChart {
+  /* min-width: 400px; */
+  /* height: 400px; */
 }
 
 @media screen and (min-width: 700px) {
@@ -114,11 +119,12 @@ div {
   #search {
     margin-bottom: 20px;
   }
-  #forecast {
+  #forecast,
+  #weatherVariable {
     margin-bottom: 20px;
   }
   #chartContainer {
-    max-width: 800px;
+    width: 700px;
     height: 600px;
   }
 }

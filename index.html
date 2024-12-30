@@ -41,12 +41,19 @@
 
     <br />
 
-    <select name="forecastMenu" id="dropDown">
+    <fieldset id="weatherVariable">
+      <legend>Weather variable</legend>
+      <input type="radio" name="variable" id="temp" />Temperature
+      <input type="radio" name="variable" id="rain" />Rain
+      <input type="radio" name="variable" id="snow" />Snowfall
+    </fieldset>
+
+    <!-- <select name="forecastMenu" id="dropDown">
       <option value="" selected>Weather variable</option>
       <option value="temp" id="temp">Temperature</option>
       <option value="rain" id="rain">Rain</option>
       <option value="snow" id="snow">Snowfall</option>
-    </select>
+    </select> -->
 
     <div id="searchBtnDiv">
       <button type="submit" id="searchBtn" name="searchfield" value="">
