@@ -105,7 +105,18 @@ div {
   margin-top: 20px;
 }
 
-@media screen and (min-width: 480px) {
+@media screen and (min-width: 700px) {
+  body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  #search {
+    margin-bottom: 20px;
+  }
+  #forecast {
+    margin-bottom: 20px;
+  }
   #chartContainer {
     max-width: 800px;
     height: 600px;
