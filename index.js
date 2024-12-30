@@ -15,6 +15,7 @@ const sevenDays = document.querySelector("#sevenDays");
 let numberOfDays;
 let forecastOption = "temperature_2m";
 let type = "line";
+let hourlyUnit;
 
 const dropDown = document.querySelector("#dropDown");
 
@@ -78,7 +79,8 @@ function fetchWeather(
   )
     .then((response) => response.json())
     .then((result) => {
-      console.log(result);
+      console.log(result.hourly_units[forecastOption]);
+      hourlyUnit = result.hourly_units[forecastOption];
 
       if (forecastOption === "temperature_2m") {
         time = result.hourly.time;
@@ -86,26 +88,26 @@ function fetchWeather(
         // adjustedTime = time.map((str) => str.substring(/2024-12-28T/g, ""));
         adjustedTime = time.map((str) => str.substring(str.indexOf("T") + 1));
         type = "line";
-        drawChart(type, cityName, temp, adjustedTime);
+        drawChart(type, hourlyUnit, temp, adjustedTime);
       } else if (forecastOption === "rain") {
         time = result.hourly.time;
         rain = result.hourly.rain;
         // adjustedTime = time.map((str) => str.substring(/2024-12-28T/g, ""));
         adjustedTime = time.map((str) => str.substring(str.indexOf("T") + 1));
         type = "bar";
-        drawChart(type, cityName, rain, adjustedTime);
+        drawChart(type, hourlyUnit, rain, adjustedTime);
       } else if (forecastOption === "snowfall") {
         time = result.hourly.time;
         snow = result.hourly.snowfall;
         // adjustedTime = time.map((str) => str.substring(/2024-12-28T/g, ""));
         adjustedTime = time.map((str) => str.substring(str.indexOf("T") + 1));
         type = "bar";
-        drawChart(type, cityName, snow, adjustedTime);
+        drawChart(type, hourlyUnit, snow, adjustedTime);
       }
     });
 }
 
-function drawChart(type, cityName, data, labels) {
+function drawChart(type, hourlyUnit, data, labels) {
   const ctx = document.getElementById("myChart");
 
   if (myChart) {
@@ -118,7 +120,7 @@ function drawChart(type, cityName, data, labels) {
       labels: labels,
       datasets: [
         {
-          label: `${cityName}`,
+          label: hourlyUnit,
           data: data,
           borderWidth: 1,
         },

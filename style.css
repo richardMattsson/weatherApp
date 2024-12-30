@@ -1,15 +1,113 @@
 body {
   background-color: #333;
-  color: #fffff7;
+  color: #ddd;
+  font-family: sans-serif;
+}
+h1 {
+  text-align: center;
+  font-size: 2rem;
+  font-family: sans-serif;
+  font-weight: 300;
+}
+#search {
+  margin: 0 auto;
+  width: 100%;
+  max-width: 800px;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #333;
+  color: #ddd;
+  border: 1px solid #777;
+  text-align: center;
+  font-size: 1.2rem;
+}
+#search:focus {
+  border: 1px solid #ccc;
+  box-shadow: none;
+  outline: none;
+}
+#searchBtn {
+  background-color: #333;
+  color: #ccc;
+  cursor: pointer;
+  border: 1px solid #777;
+  padding: 10px;
+  margin-top: 10px;
+  font-size: 1rem;
+}
+#searchBtn:disabled {
+  background-color: #555;
+  color: #999;
+  cursor: not-allowed;
+}
+#searchBtn:hover {
+  background-color: #444;
+  border: 1px solid #ccc;
+}
+#searchBtn:active {
+  background-color: #222;
+  border: 1px solid #555;
+}
+
+#forecast {
+  margin: 0 auto;
+  width: 95%;
+  max-width: 800px;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #333;
+  color: #ddd;
+  border: 1px solid #777;
+  font-family: sans-serif;
+  font-size: 1rem;
+}
+input[type="radio"] {
+  accent-color: #333;
+  background-color: #333;
+}
+input[type="radio"]:focus {
+  outline: 2px solid #333;
+}
+input[type="radio"]:checked {
+  accent-color: #333;
+}
+#dropDown {
+  margin: 0 auto;
+  width: 100%;
+  max-width: 800px;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #333;
+  color: #ddd;
+  border: 1px solid #777;
+  font: 1rem sans-serif;
+  text-align: center;
+  margin-bottom: 10px;
+}
+#dropDown:focus {
+  border: 1px solid #ccc;
+  box-shadow: none;
+  outline: none;
 }
 div {
   display: flex;
   flex-direction: column;
 }
+#chartContainer {
+  max-width: 800px;
+  height: 400px;
+  margin-top: 20px;
+}
 
 @media screen and (min-width: 480px) {
-  div {
+  #chartContainer {
     max-width: 800px;
-    height: 400px;
+    height: 600px;
   }
 }

@@ -3,10 +3,12 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Weather App</title>
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
+    <h1>Weather forecast</h1>
+    <label for="searchfield">Choose youre city</label>
     <input
       type="search"
       name="searchfield"
@@ -14,25 +16,44 @@
       placeholder="City name"
     />
 
-    <button type="submit" id="searchBtn" name="searchfield" value="">
-      Search
-    </button>
-
     <br />
-
-    <input type="radio" name="numberOfDaysForecast" id="oneDay" />1-day
-    <input type="radio" name="numberOfDaysForecast" id="threeDays" />3-days
-    <input type="radio" name="numberOfDaysForecast" id="sevenDays" />7-days
+    <fieldset id="forecast">
+      <legend id="legend">Amount of days forecast</legend>
+      <input
+        class="radioBtn"
+        type="radio"
+        name="numberOfDaysForecast"
+        id="oneDay"
+      />1-day
+      <input
+        class="radioBtn"
+        type="radio"
+        name="numberOfDaysForecast"
+        id="threeDays"
+      />3-days
+      <input
+        class="radioBtn"
+        type="radio"
+        name="numberOfDaysForecast"
+        id="sevenDays"
+      />7-days
+    </fieldset>
 
     <br />
 
     <select name="forecastMenu" id="dropDown">
-      <option selected value="temp" id="temp">Temperature</option>
+      <option value="" selected>Weather variable</option>
+      <option value="temp" id="temp">Temperature</option>
       <option value="rain" id="rain">Rain</option>
       <option value="snow" id="snow">Snowfall</option>
     </select>
 
-    <div>
+    <div id="searchBtnDiv">
+      <button type="submit" id="searchBtn" name="searchfield" value="">
+        Search
+      </button>
+    </div>
+    <div id="chartContainer">
       <canvas id="myChart"></canvas>
     </div>
 
